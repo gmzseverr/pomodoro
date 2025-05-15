@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BreakButtons from "./BreakButtons";
 
 function Timer() {
@@ -6,6 +6,11 @@ function Timer() {
   const [isRunning, setIsRunning] = useState(false);
   const [mode, setMode] = useState("focus");
   const [cycleCount, setCycleCount] = useState(0);
+  const bellRef = useRef(null);
+
+  useEffect(() => {
+    bellRef.current = new Audio("/bell-notification-337658.mp3");
+  }, []);
 
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -19,7 +24,7 @@ function Timer() {
     setIsRunning(false);
     setInitialTime(25 * 60);
     setMode("focus");
-    setCycleCount(0); // Reset the cycle count when reset
+    setCycleCount(0);
   };
 
   useEffect(() => {
@@ -31,19 +36,24 @@ function Timer() {
       }, 1000);
     }
 
-    if (initialTime === 0) {
+    if (initialTime === 0 && isRunning) {
+      if (bellRef.current) {
+        bellRef.current.play();
+      }
+
       if (mode === "focus") {
-        setCycleCount((prev) => prev + 1);
-        if ((cycleCount + 1) % 4 === 0) {
+        const newCycle = cycleCount + 1;
+        setCycleCount(newCycle);
+        if (newCycle % 4 === 0) {
           setMode("long");
-          setInitialTime(15 * 60); // Long break
+          setInitialTime(15 * 60);
         } else {
           setMode("short");
-          setInitialTime(5 * 60); // Short break
+          setInitialTime(5 * 60);
         }
       } else {
         setMode("focus");
-        setInitialTime(25 * 60); // Focus time
+        setInitialTime(25 * 60);
       }
     }
 

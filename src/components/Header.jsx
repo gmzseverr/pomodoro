@@ -3,6 +3,7 @@ import "../styles/header.css";
 import TaskItem from "./TaskItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight, faFilePen } from "@fortawesome/free-solid-svg-icons";
+import MusicBox from "./MusicBox";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,14 +66,13 @@ function Header() {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            {/* ✏️ faFilePen ikonu */}
             <div className="edit-trigger" onClick={handleShowInput}>
               <FontAwesomeIcon icon={faFilePen} />
             </div>
 
             <ul>
               {tasks.length === 0 ? (
-                <li>Henüz görev yok</li>
+                <li></li>
               ) : (
                 tasks.map((task, idx) => (
                   <TaskItem
@@ -103,6 +103,7 @@ function Header() {
                 />
               </div>
             )}
+            <MusicBox />
           </div>
         </>
       )}

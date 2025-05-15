@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+
 import Timer from "./components/Timer";
 
 function App() {
