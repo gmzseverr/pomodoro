@@ -15,8 +15,12 @@ function BreakButtons({ setIsRunning, setInitialTime, setMode }) {
 
   return (
     <div>
-      <button onClick={handleShortBreak}>Short Break</button>
-      <button onClick={handleLongBreak}>Long Break</button>
+      <button className="break-btn" onClick={handleShortBreak}>
+        Short Break
+      </button>
+      <button className="break-btn" onClick={handleLongBreak}>
+        Long Break
+      </button>
     </div>
   );
 }
