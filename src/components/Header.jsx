@@ -11,12 +11,13 @@ function Header() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const inputRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleAddTask = () => {
     if (newTask.trim() !== "") {
       setTasks([...tasks, { text: newTask.trim(), completed: false }]);
       setNewTask("");
-      setShowInput(false); // ✅ ekledikten sonra input'u gizle
+      setShowInput(false); //
     }
   };
 
@@ -103,10 +104,14 @@ function Header() {
                 />
               </div>
             )}
-            <MusicBox />
           </div>
         </>
       )}
+      <MusicBox
+        isVisible={isOpen}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+      />
     </>
   );
 }

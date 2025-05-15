@@ -1,0 +1,30 @@
+.theme-red {
+  background: #820000;
+  background: radial-gradient(
+    circle,
+    rgba(130, 0, 0, 1) 0%,
+    #ab1616 74%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: white;
+}
+
+.theme-dream {
+  background: #3a1c71; /* fallback */
+  background: -webkit-linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
+  background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
+  color: white;
+}
+
+.theme-ocean {
+  background: #000046; /* fallback */
+  background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+  background: linear-gradient(to right, #1cb5e0, #000046);
+  color: white;
+}
+.theme-forest {
+  background: #093028; /* fallback */
+  background: -webkit-linear-gradient(to right, #237a57, #093028);
+  background: linear-gradient(to right, #237a57, #093028);
+  color: white;
+}

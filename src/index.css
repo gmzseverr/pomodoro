@@ -9,6 +9,36 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+body.default-theme {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: linear-gradient(135deg, #ffe8e5, #ffd3d1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+body.red-theme {
+  background: radial-gradient(
+    circle,
+    rgba(130, 0, 0, 1) 0%,
+    rgba(171, 22, 22, 1) 74%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+body.ocean-theme {
+  background: linear-gradient(to right, #1cb5e0, #000046);
+}
+
+body.forest-theme {
+  background: linear-gradient(to right, #237a57, #093028);
+}
+
+body.beauty-theme {
+  background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
+}
 
 .timer-section {
   display: flex;
@@ -67,8 +97,6 @@ svg {
   cursor: pointer;
 }
 .circle:hover {
-  background-color: #b84343;
-  border: #b84343;
 }
 
 .break-btn {
@@ -85,7 +113,7 @@ svg {
 }
 
 .break-btn:hover {
-  background-color: #b84343;
+  font-size: large;
 }
 
 .mode-buttons {
@@ -111,4 +139,27 @@ svg {
 }
 .tracker-dot.filled {
   background-color: white;
+}
+
+.theme-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 2px;
+  top: 50px;
+}
+
+.theme-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.theme-btn.selected {
+  border: 3px solid white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 0 8px white;
 }
