@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:...&display=swap");
+
+body {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: linear-gradient(135deg, #ffe8e5, #ffd3d1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.timer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timer-container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.timer-time {
+  font-family: "Poppins", sans-serif;
+  font-size: 10rem;
+  font-weight: 800;
+  color: white;
+}
+.timer-side {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mode {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-size: 25px;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+}
+.task {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: white;
+}
+
+svg {
+  width: 40px;
+  height: 40px;
+}
+.circle {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 4px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.circle:hover {
+  background-color: #b84343;
+  border: #b84343;
+}
+
+button {
+  padding: 0.75rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #b84343;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+input {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.cycle-tracker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.tracker-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.tracker-dot.filled {
+  background-color: white;
+}
