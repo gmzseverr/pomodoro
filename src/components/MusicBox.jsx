@@ -13,10 +13,9 @@ function MusicBox({ isVisible, isPlaying, setIsPlaying }) {
       style={{ display: isVisible ? "block" : "none" }}
     >
       <button className="play-btn" onClick={handlePlay}>
-        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+        <FontAwesomeIcon size="2x" icon={isPlaying ? faPause : faPlay} />
       </button>
 
-      {/* iframe her zaman DOM'da kalır, sadece oynatmayı kontrol ederiz */}
       <iframe
         width="0"
         height="0"
